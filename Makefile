@@ -12,7 +12,7 @@
 
 NAME = fractol
 CC = gcc
-OPTI = -O3
+OPTI = -O2
 CFLAGS_DEBUG = -g0 -O0
 CFLAGS = -Wall -Werror -Wextra $(OPTI)
 
@@ -31,15 +31,15 @@ CFLAGS += $(addprefix -I,$(INC_PATH) $(LIBFT_INC_PATH) $(MLX_INC_PATH))
 #Sources
 SRC_PATH = srcs/
 SRC_PATH += srcs/memory
-SRC_PATH += srcs/output
 SRC_PATH += srcs/treatment
-SRC_PATH += srcs/mandelbrot
+SRC_PATH += srcs/fractals
 vpath %.c $(SRC_PATH)
 
 SOURCES = main.c \
 					treatment.c \
 					init_env.c \
 					init_data.c \
+					mandelbrot.c \
 
 
 # Libft

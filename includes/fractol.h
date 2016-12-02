@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   treatment.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 13:57:50 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 17:02:03 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/12/02 18:30:30 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,13 @@ void		init_mlx(t_app *app);
 t_img		*init_img(t_app *app, int width, int height);
 void		env_destroy(t_app *app);
 t_data		*init_coords_mandelbrot(void);
+
+/*
+** output
+*/
+
+void		mlx_put_pixel_to_image(t_app *app, int x, int y, int color);
+void		put_pixel_and_choose_color(t_app *app);
+void		draw_mandelbrot(t_app *app);
 
 #endif

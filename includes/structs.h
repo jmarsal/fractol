@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 17:05:06 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/02 18:00:47 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct	s_data
 	double		z_r;
 	double		z_i;
 	double		tmp;
-	int			col;
+	int			color;
 	int			x;
 	int			y;
 	int			iter;
@@ -48,9 +48,9 @@ typedef struct	s_app
 {
 	t_img		*img;
 	t_data		*data;
-	void		*mlx;
+	void		*mlx_ptr;
 	void		*mlx_win;
-	int			*mapname;
+	int			mapname;
 }				t_app;
 
 #endif

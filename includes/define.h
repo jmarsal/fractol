@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 17:04:44 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/02 18:15:00 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 */
 
 # define BLACK 0x000000
+# define BLUE 0x1d4a64
+# define PINK 0x81a46
+# define COLOR_START BLACK
 
 /*
 ** Errors
