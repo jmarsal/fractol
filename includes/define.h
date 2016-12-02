@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/01 18:32:21 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/02 17:04:44 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 */
 
 # define TITLE "fractol by jmarsal"
-# define MLX_WIN app->win->mlx->mlx_win
-# define MLX_PTR app->win->mlx->mlx_ptr
+# define MLX_WIN app->mlx_win
+# define MLX_PTR app->mlx_ptr
 # define WIDTH 1920
 # define HEIGHT 1080
 # define WIDTH_DRAW 1300
@@ -27,6 +27,12 @@
 # define SIZE_MENU_W 350
 # define SIZE_MENU_H 100
 # define MASK_CLOSE 1L << 17
+
+/*
+** Colors
+*/
+
+# define BLACK 0x000000
 
 /*
 ** Errors

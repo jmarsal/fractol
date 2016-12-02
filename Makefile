@@ -38,7 +38,8 @@ vpath %.c $(SRC_PATH)
 
 SOURCES = main.c \
 					treatment.c \
-					init_env.c
+					init_env.c \
+					init_data.c \
 
 
 # Libft
