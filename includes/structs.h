@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/11/25 16:08:36 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/01 18:11:31 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,17 @@
 
 typedef struct		s_coords
 {
-	int				x;
-	int				y;
-	float			z;
+	double			x;
+	double			x1;
+	double			y;
+	double			y2;
+	double			c;
+	double			ci;
+	double			z;
+	double			zi;
 	int				color;
+	unsigned int	zoom;
+	unsigned int	iter_max;
 }					t_coords;
 
 typedef struct		s_img
@@ -51,14 +58,14 @@ typedef struct		s_mlx
 typedef struct		s_print
 {
 	t_mlx			*mlx;
-	// t_win			*win;
 	t_img			*img;
+	t_coords		**coords;
 }					t_print;
 
-typedef struct		s_fract
+typedef struct		s_app
 {
 	t_print			*win;
 	char			*map_name;
-}					t_fract;
+}					t_app;
 
 #endif
