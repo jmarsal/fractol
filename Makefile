@@ -16,10 +16,16 @@ OPTI = -O2
 CFLAGS_DEBUG = -g0 -O0
 CFLAGS = -Wall -Werror -Wextra $(OPTI)
 
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S), Darwin)
+    MLX_INC_PATH = libmlx
+else
+    MLX_INC_PATH = minilibx
+endif
+
 #Header
 LIBFT_INC_PATH = libft/includes
 LIBFT_INC_FILES = libft.h
-MLX_INC_PATH = libmlx/
 MLX_INC_FILES = mlx.h
 INC_PATH = includes
 INC_FILES = fractol.h define.h structs.h
@@ -41,24 +47,31 @@ SOURCES = main.c \
 					init_data.c \
 					mandelbrot.c \
 
-
 # Libft
  LIBFT_PATH = libft
  LIBFT = $(LIBFT_PATH)/libft.a
 
  # MLX
- MLX_PATH = libmlx
- MLX = $(MLX_PATH)/mlx.a
+ifeq ($(UNAME_S), Darwin)
+   MLX_PATH = libmlx
+else
+    MLX_PATH = minilibx
+endif
+MLX = $(MLX_PATH)/mlx.a
 
 #Objects
 OBJ_PATH = ./obj
 OBJECTS = $(addprefix $(OBJ_PATH)/, $(SOURCES:%.c=%.o))
 
-LIB_PATH = -L./libft/ -lft -L./libmlx/ -lmlx -framework OpenGL -framework AppKit
+ifeq ($(UNAME_S), Darwin)
+   LIB_PATH = -L./libft/ -lft -L./libmlx/ -lmlx -framework OpenGL -framework AppKit
+else
+    LIB_PATH = -L./libft/ -lft  -L./minilibx/ -lmlx -L/usr/include/../lib -lXext -lX11 -lm
+endif
 
 all: $(NAME)
 $(NAME): $(OBJECTS)
-	@make -C libmlx
+	@make -C $(MLX_PATH)
 	@make -C libft
 	@$(CC) -o $(NAME) $(OBJECTS) $(CFLAGS) $(LIB_PATH)
 	@echo "\n-----------------------------------------"
@@ -88,19 +101,19 @@ re: fclean all
 
 libs:
 	@make -C libft
-	@make -C libmlx
+	@make -C $(MLX_PATH)
 
 libs-clean:
 	@make -C libft clean
-	@make -C libmlx clean
+	@make -C $(MLX_PATH) clean
 
 libs-fclean:
 	@make -C libft fclean
-	@make -C libmlx clean
+	@make -C $(MLX_PATH) clean
 
 libs-re: libs-fclean
 	@make -C libft re
-	@make -C libmlx re
+	@make -C $(MLX_PATH) re
 
 fclean-all: fclean libs-fclean
 

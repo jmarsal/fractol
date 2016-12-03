@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 18:28:28 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/02 23:04:32 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void		put_pixel_and_choose_color(t_app *app)
 
 int	start_treatment(t_app *app, const char *mapname)
 {
-	int		h;
-	int		w;
+	// int		h;
+	// int		w;
 
-	h = HEIGHT_DRAW;
-	w = WIDTH_DRAW;
+	// h = HEIGHT_DRAW;
+	// w = WIDTH_DRAW;
 
 	/* Init de l'app en fonction de la map */
 	if (!(app = init_app(mapname)))
