@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 17:58:37 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/04 00:50:57 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_data	*init_win(t_app *app)
 	t_data	*tmp;
 
 	tmp = NULL;
-	init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
+	// app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
 	if (app->mapname == 1)
 		tmp = init_coords_mandelbrot();
 	return (tmp);
@@ -75,6 +75,13 @@ t_app		*init_app(const char *mapname)
 	if (!ft_strcmp(mapname, "mandelbrot"))
 		tmp->mapname = 1;
 	init_mlx(tmp);
+	tmp->background = init_img(tmp, WIDTH, HEIGHT);
+	tmp->img_ico = init_img(tmp, 64, 64);
+	tmp->bordure_left = init_img(tmp, WIDTH, HEIGHT);
+	tmp->bordure_right = init_img(tmp, WIDTH, HEIGHT);
+	tmp->bordure_top = init_img(tmp, WIDTH, HEIGHT);
+	tmp->bordure_bottom = init_img(tmp, WIDTH, HEIGHT);
+	tmp->one = init_img(tmp, 32, 32);
 	tmp->img = init_img(tmp, WIDTH_DRAW, HEIGHT_DRAW);
 	tmp->data = init_win(tmp);
 	return (tmp);

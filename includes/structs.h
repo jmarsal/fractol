@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 18:00:47 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/04 00:39:11 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ typedef struct	s_data
 typedef struct	s_app
 {
 	t_img		*img;
+	t_img		*background;
+	t_img		*img_ico;
+	t_img		*bordure_left;
+	t_img		*bordure_right;
+	t_img		*bordure_top;
+	t_img		*bordure_bottom;
+	t_img		*one;
 	t_data		*data;
 	void		*mlx_ptr;
 	void		*mlx_win;

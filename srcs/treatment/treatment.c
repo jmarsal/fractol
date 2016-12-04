@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 23:04:32 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/04 01:07:01 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void		put_pixel_and_choose_color(t_app *app)
 
 int	start_treatment(t_app *app, const char *mapname)
 {
-	// int		h;
-	// int		w;
+	int		h;
+	int		w;
 
-	// h = HEIGHT_DRAW;
-	// w = WIDTH_DRAW;
+	h = HEIGHT;
+	w = WIDTH;
 
 	/* Init de l'app en fonction de la map */
 	if (!(app = init_app(mapname)))
@@ -56,6 +56,29 @@ int	start_treatment(t_app *app, const char *mapname)
 	/* Replissage de la data en fonction de la fractale */
 	if (app->mapname == 1)
 		draw_mandelbrot(app);
+	
+	/* Background */
+	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/background.xpm", &w, &h);
+	app->img_ico->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/menu.xpm", &w, &h);
+	app->bordure_left->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/borders.xpm", &w, &h);
+	app->one->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/one.xpm", &w, &h);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->background->img_ptr, 0, 0);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->img_ico->img_ptr, 30, 30);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->bordure_left->img_ptr, 342, 93);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->one->img_ptr, 35, 130);
+	mlx_string_put(MLX_PTR, MLX_WIN, 110, 50, 0x7E7E93, "CHOOSE FRACTALS");
+	mlx_string_put(MLX_PTR, MLX_WIN, 110, 135, 0x7E7E93, "MANDELBROT");
+
+	if (app->mapname == 1)
+		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
 
 	/* Replissage de l'image en fonction de la fractale */
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
