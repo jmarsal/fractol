@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 16:04:19 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 16:08:48 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,12 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 
 int				mouse_funct(int button, int x, int y, t_app *app)
 {
-	printf("button = %d, x = %d, y = %d\n", button, x, y);
 	if (x >= 30 && x <= 295 && y >= 115 && y <= 190)
 	{
 		app->data = init_coords_mandelbrot();
 		refresh_win(app);
 	}
-	// else
-	// {
-	// 	mlx_string_put(MLX_PTR, MLX_WIN, 120, 135, RED, "MANDELBROT");
-	// 	*test = 0;
-	// }
-	// refresh_win(app);
-	(void)y;
+	(void)button;
 	return (0);
 }
 
