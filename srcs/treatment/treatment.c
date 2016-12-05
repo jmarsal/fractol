@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 00:25:48 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 09:31:06 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ void		put_pixel_and_choose_color(t_app *app)
 	else
 		mlx_put_pixel_to_image(app, app->data->x, app->data->y,
 			app->data->color * app->data->i / app->data->iter);
+}
+
+int	refresh_win(t_app *app)
+{
+	mlx_destroy_image(MLX_PTR, app->img);
+	app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
+	if (app->mapname == 1)
+		draw_mandelbrot(app);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->img->img_ptr, SIZE_MENU_W, SIZE_MENU_H);
+	return (0);
 }
 
 /*
@@ -75,6 +86,7 @@ int	start_treatment(t_app *app, const char *mapname)
 		app->img->img_ptr, SIZE_MENU_W, SIZE_MENU_H);
 
 	/* Interaction utilisateur */
+	mlx_hook(MLX_WIN, 2, 3, key_funct, app);
 	mlx_hook(MLX_WIN, 17, MASK_CLOSE, close_win, app);
 
 	/* Loop tant que */

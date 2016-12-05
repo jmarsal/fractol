@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 00:21:02 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 01:29:58 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 08:57:50 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	put_str_to_win(t_app *app)
 {
-	mlx_string_put(MLX_PTR, MLX_WIN, 110, 50, RED, "CHOOSE FRACTALS");
-	mlx_string_put(MLX_PTR, MLX_WIN, 110, 135, RED, "MANDELBROT");
-	mlx_string_put(MLX_PTR, MLX_WIN, 110, 230, RED, "JULIA");
+	mlx_string_put(MLX_PTR, MLX_WIN, 120, 50, RED, "CHOOSE FRACTALS");
+	mlx_string_put(MLX_PTR, MLX_WIN, 120, 135, RED, "MANDELBROT");
+	mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, RED, "JULIA");
 }
 
 void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp)

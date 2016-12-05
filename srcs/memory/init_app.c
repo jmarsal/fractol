@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 00:24:29 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 09:53:54 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ void		init_mlx(t_app *app)
 	}
 }
 
-static t_data	*init_win(t_app *app)
+t_data			*init_win(t_app *app)
 {
 	t_data	*tmp;
 
 	tmp = NULL;
-	// app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
 	if (app->mapname == 1)
 		tmp = init_coords_mandelbrot();
 	return (tmp);

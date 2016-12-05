@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 18:40:16 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 09:42:30 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_data	*init_coords_mandelbrot(void)
 	if (!(data = ft_memalloc(sizeof(t_data))))
 		return (NULL);
 	data->iter = 150;
-	data->motion = 0;
+	// data->mouse_pos = 0;
 	data->x1 = -2.02;
 	data->x2 = 0.6;
 	data->y1 = -2.02;
@@ -33,8 +33,8 @@ t_data	*init_coords_mandelbrot(void)
 
 static void get_data_result(t_app *app)
 {
-	while ((app->data->z_r * app->data->z_r + app->data->z_i * app->data->z_i) < 4 &&
-		app->data->i < app->data->iter)
+	while ((app->data->z_r * app->data->z_r + app->data->z_i * app->data->z_i)
+		< 4 && app->data->i < app->data->iter)
 	{
 		app->data->tmp = app->data->z_r;
 		app->data->z_r = app->data->z_r * app->data->z_r - app->data->z_i *

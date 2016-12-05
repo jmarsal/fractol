@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 00:52:27 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 09:43:26 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@
 # define SIZE_MENU_W 350
 # define SIZE_MENU_H 100
 # define MASK_CLOSE 1L << 17
+
+/*
+** KEYCODE
+*/
+
+# define ESC 53
+# define LEFT 123
+# define RIGHT 124
+# define UP 125
+# define DOWN 126
+# define ORIGIN 31
 
 /*
 ** Colors

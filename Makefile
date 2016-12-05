@@ -39,6 +39,7 @@ SRC_PATH = srcs/
 SRC_PATH += srcs/memory
 SRC_PATH += srcs/treatment
 SRC_PATH += srcs/fractals
+SRC_PATH += srcs/events
 vpath %.c $(SRC_PATH)
 
 SOURCES = main.c \
@@ -48,6 +49,8 @@ SOURCES = main.c \
 					init_menu_left.c \
 					init_data.c \
 					mandelbrot.c \
+					events.c \
+					key_fonctions.c \
 
 # Libft
  LIBFT_PATH = libft

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 01:23:51 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 09:41:59 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct	s_data
 	int			x;
 	int			y;
 	int			iter;
-	int			motion;
+	// int			mouse_pos;
 	int			i;
 }				t_data;
 
