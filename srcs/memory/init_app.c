@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_env.c                                         :+:      :+:    :+:   */
+/*   init_app.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/04 00:50:57 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 00:24:29 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static t_app	*create_app(void)
 	MLX_PTR = NULL;
 	MLX_WIN = NULL;
 	app->img = NULL;
+	app->menu_l = NULL;
 	app->data = NULL;
 	return (app);
 }
@@ -66,7 +67,7 @@ static t_app	*create_app(void)
 ** Init app 
 */
 
-t_app		*init_app(const char *mapname)
+t_app		*init_app(const char *mapname, int *h, int *w)
 {
 	t_app	*tmp;
 
@@ -76,12 +77,7 @@ t_app		*init_app(const char *mapname)
 		tmp->mapname = 1;
 	init_mlx(tmp);
 	tmp->background = init_img(tmp, WIDTH, HEIGHT);
-	tmp->img_ico = init_img(tmp, 64, 64);
-	tmp->bordure_left = init_img(tmp, WIDTH, HEIGHT);
-	tmp->bordure_right = init_img(tmp, WIDTH, HEIGHT);
-	tmp->bordure_top = init_img(tmp, WIDTH, HEIGHT);
-	tmp->bordure_bottom = init_img(tmp, WIDTH, HEIGHT);
-	tmp->one = init_img(tmp, 32, 32);
+	tmp->menu_l = init_left_menu(tmp, h, w);
 	tmp->img = init_img(tmp, WIDTH_DRAW, HEIGHT_DRAW);
 	tmp->data = init_win(tmp);
 	return (tmp);

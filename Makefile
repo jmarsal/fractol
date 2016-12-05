@@ -43,7 +43,9 @@ vpath %.c $(SRC_PATH)
 
 SOURCES = main.c \
 					treatment.c \
-					init_env.c \
+					put_img_and_str_win.c \
+					init_app.c \
+					init_menu_left.c \
 					init_data.c \
 					mandelbrot.c \
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   treatment.c                                        :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 18:30:30 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 00:24:13 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 # include "libft.h"
 
 int			start_treatment(t_app	*app, const char *mapname);
+void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp);
 
 /*
 ** memory
 */
 
-t_app		*init_app(const char *mapname);
+t_app		*init_app(const char *mapname, int *h, int *w);
+t_menu_l	*init_left_menu(t_app *app, int *h, int *w);
 void		init_mlx(t_app *app);
 t_img		*init_img(t_app *app, int width, int height);
 void		env_destroy(t_app *app);

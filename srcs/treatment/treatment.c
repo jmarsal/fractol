@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/04 01:07:01 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 00:25:48 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	start_treatment(t_app *app, const char *mapname)
 	w = WIDTH;
 
 	/* Init de l'app en fonction de la map */
-	if (!(app = init_app(mapname)))
+	if (!(app = init_app(mapname, &h, &w)))
 		return (-1);
 
 	/* Replissage de la data en fonction de la fractale */
@@ -60,23 +60,13 @@ int	start_treatment(t_app *app, const char *mapname)
 	/* Background */
 	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/background.xpm", &w, &h);
-	app->img_ico->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-		"srcs/img/menu.xpm", &w, &h);
-	app->bordure_left->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-		"srcs/img/borders.xpm", &w, &h);
-	app->one->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-		"srcs/img/one.xpm", &w, &h);
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->background->img_ptr, 0, 0);
-	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		app->img_ico->img_ptr, 30, 30);
-	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		app->bordure_left->img_ptr, 342, 93);
-	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		app->one->img_ptr, 35, 130);
-	mlx_string_put(MLX_PTR, MLX_WIN, 110, 50, 0x7E7E93, "CHOOSE FRACTALS");
-	mlx_string_put(MLX_PTR, MLX_WIN, 110, 135, 0x7E7E93, "MANDELBROT");
 
+	// /* put menu to win */
+	put_img_menu_l_to_win(app, app->menu_l);
+
+	/* Win top */
 	if (app->mapname == 1)
 		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
 
