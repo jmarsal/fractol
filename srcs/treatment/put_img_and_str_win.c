@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 00:21:02 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 08:57:50 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 15:51:33 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static void	put_str_to_win(t_app *app)
 {
 	mlx_string_put(MLX_PTR, MLX_WIN, 120, 50, RED, "CHOOSE FRACTALS");
-	mlx_string_put(MLX_PTR, MLX_WIN, 120, 135, RED, "MANDELBROT");
-	mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, RED, "JULIA");
+	// mlx_string_put(MLX_PTR, MLX_WIN, 120, 135, MOUSE_OFF, "MANDELBROT");
+	// mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, MOUSE_OFF, "JULIA");
 }
 
 void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp)
@@ -32,6 +32,8 @@ void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp)
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		tmp->three->img_ptr, 45, 320);
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		tmp->bordure_left->img_ptr, 342, 93);
+		tmp->mandel_col->img_ptr, 70, 105);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		tmp->julia_col->img_ptr, 105, 198);
 	put_str_to_win(app);
 }

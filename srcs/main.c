@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 13:52:44 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/02 09:35:45 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 11:50:05 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		{
 			if ((start_treatment(app, av[1])) == -1)
 				return (-1);
-			env_destroy(app);
+			app_destroy(app);
 		}
 		else
 		{

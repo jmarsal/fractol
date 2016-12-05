@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 09:53:54 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 11:43:15 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_app		*init_app(const char *mapname, int *h, int *w)
 ** Free App
 */
 
-void		env_destroy(t_app *app)
+void		app_destroy(t_app *app)
 {
 	ft_free(MLX_PTR);
 	ft_free(MLX_WIN);

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 09:31:06 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 15:59:29 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	start_treatment(t_app *app, const char *mapname)
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->background->img_ptr, 0, 0);
 
-	// /* put menu to win */
+	/* put menu to win */
 	put_img_menu_l_to_win(app, app->menu_l);
 
 	/* Win top */
@@ -87,6 +87,9 @@ int	start_treatment(t_app *app, const char *mapname)
 
 	/* Interaction utilisateur */
 	mlx_hook(MLX_WIN, 2, 3, key_funct, app);
+	mlx_hook(MLX_WIN, 6, 1 << 8, mouse_motion_menu, app);
+	// mlx_loop_hook(MLX_WIN, mouse_funct, app);
+	mlx_mouse_hook(MLX_WIN, mouse_funct, app);
 	mlx_hook(MLX_WIN, 17, MASK_CLOSE, close_win, app);
 
 	/* Loop tant que */

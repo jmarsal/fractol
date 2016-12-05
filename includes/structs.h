@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 09:41:59 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 14:13:36 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ typedef struct	s_menu_l
 	t_img		*one;
 	t_img		*two;
 	t_img		*three;
-	t_img		*bordure_left;
 	t_img		*button_grey;
-	t_img		*bordure_top;
-	t_img		*bordure_bottom;
+	t_img		*mandel_col;
+	t_img		*julia_col;
 }				t_menu_l;
 
 typedef struct	s_data

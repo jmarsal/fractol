@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 09:43:26 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 13:43:45 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@
 # define BLUE 0x1d4a64
 # define PINK 0xff00c1
 # define RED 0xff0000
+# define MOUSE_ON BLUE
+# define MOUSE_OFF RED
 # define COLOR_START BLACK
 
 /*
