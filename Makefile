@@ -45,10 +45,13 @@ vpath %.c $(SRC_PATH)
 SOURCES = main.c \
 					treatment.c \
 					put_img_and_str_win.c \
+					put_img_bottom_to_win.c \
 					init_app.c \
 					init_menu_left.c \
+					init_menu_bottom.c \
 					init_data.c \
 					mandelbrot.c \
+					julia.c \
 					events.c \
 					key_fonctions.c \
 

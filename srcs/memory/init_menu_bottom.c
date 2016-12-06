@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_menu_bottom.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 13:52:44 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:04:30 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/12/05 17:51:56 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/12/05 22:41:17 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int ac, char **av)
+static t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w)
 {
-	t_app	*app;
+	tmp->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/slider_off.xpm", w, h);
+	return (tmp);
+}
 
-	app = NULL;
-	if (ac == 2)
-	{
-		if (!ft_strcmp(av[1], "mandelbrot") || !ft_strcmp(av[1], "julia"))
-		{
-			if ((start_treatment(app, av[1])) == -1)
-				return (-1);
-			app_destroy(app);
-		}
-		else
-		{
-			ft_putstr_fd(ERR2, 0);
-			return (-1);
-		}
-	}
-	else
-		ft_putstr_fd(ERR1, 0);
-	return (0);
+t_menu_b		*init_bottom_menu(t_app *app, int *h, int *w)
+{
+	t_menu_b	*tmp;
+
+	if (!(tmp = ft_memalloc(sizeof(t_menu_b))))
+		exit (-1);
+	tmp->slider_motion = init_img(app, 64, 64);
+	tmp = fill_menu_bottom(app, tmp, h, w);
+	return (tmp);
 }

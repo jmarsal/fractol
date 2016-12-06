@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 15:59:29 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 01:18:00 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	refresh_win(t_app *app)
 	app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
 	if (app->mapname == 1)
 		draw_mandelbrot(app);
+	if (app->mapname == 2)
+		draw_julia(app);
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->img->img_ptr, SIZE_MENU_W, SIZE_MENU_H);
 	return (0);
@@ -66,7 +68,12 @@ int	start_treatment(t_app *app, const char *mapname)
 
 	/* Replissage de la data en fonction de la fractale */
 	if (app->mapname == 1)
+	{
 		draw_mandelbrot(app);
+		app->data->x1 -= 50;
+	}
+	else if (app->mapname == 2)
+		draw_julia(app);
 	
 	/* Background */
 	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
@@ -76,6 +83,7 @@ int	start_treatment(t_app *app, const char *mapname)
 
 	/* put menu to win */
 	put_img_menu_l_to_win(app, app->menu_l);
+	put_img_menu_b_to_win(app, app->menu_b);
 
 	/* Win top */
 	if (app->mapname == 1)
@@ -88,7 +96,6 @@ int	start_treatment(t_app *app, const char *mapname)
 	/* Interaction utilisateur */
 	mlx_hook(MLX_WIN, 2, 3, key_funct, app);
 	mlx_hook(MLX_WIN, 6, 1 << 8, mouse_motion_menu, app);
-	// mlx_loop_hook(MLX_WIN, mouse_funct, app);
 	mlx_mouse_hook(MLX_WIN, mouse_funct, app);
 	mlx_hook(MLX_WIN, 17, MASK_CLOSE, close_win, app);
 

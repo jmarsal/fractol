@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 11:43:15 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 01:05:31 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ t_data			*init_win(t_app *app)
 	tmp = NULL;
 	if (app->mapname == 1)
 		tmp = init_coords_mandelbrot();
+	else if (app->mapname == 2)
+		tmp = init_julia();
 	return (tmp);
 }
 
@@ -58,6 +60,7 @@ static t_app	*create_app(void)
 	MLX_WIN = NULL;
 	app->img = NULL;
 	app->menu_l = NULL;
+	app->menu_b = NULL;
 	app->data = NULL;
 	return (app);
 }
@@ -74,9 +77,12 @@ t_app		*init_app(const char *mapname, int *h, int *w)
 		return (NULL);
 	if (!ft_strcmp(mapname, "mandelbrot"))
 		tmp->mapname = 1;
+	if (!ft_strcmp(mapname, "julia"))
+		tmp->mapname = 2;
 	init_mlx(tmp);
 	tmp->background = init_img(tmp, WIDTH, HEIGHT);
 	tmp->menu_l = init_left_menu(tmp, h, w);
+	tmp->menu_b = init_bottom_menu(tmp, h, w);
 	tmp->img = init_img(tmp, WIDTH_DRAW, HEIGHT_DRAW);
 	tmp->data = init_win(tmp);
 	return (tmp);

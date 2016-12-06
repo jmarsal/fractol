@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 13:43:45 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 23:10:34 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define UP 125
 # define DOWN 126
 # define ORIGIN 31
+# define ZOOMUP 4
+# define ZOOMDOWN 5
 
 /*
 ** Colors

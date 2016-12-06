@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 14:13:36 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 18:00:42 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct	s_menu_l
 	t_img		*julia_col;
 }				t_menu_l;
 
+typedef struct	s_menu_b
+{
+	t_img		*slider_motion;
+}				t_menu_b;
+
 typedef struct	s_data
 {
 	long double	zoom;
@@ -51,7 +56,7 @@ typedef struct	s_data
 	int			x;
 	int			y;
 	int			iter;
-	// int			mouse_pos;
+	int			motion;
 	int			i;
 }				t_data;
 
@@ -59,6 +64,7 @@ typedef struct	s_app
 {
 	t_img		*img;
 	t_menu_l	*menu_l;
+	t_menu_b	*menu_b;
 	t_img		*background;
 	t_data		*data;
 	void		*mlx_ptr;

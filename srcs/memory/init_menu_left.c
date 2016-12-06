@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 22:28:08 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 14:19:42 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/05 18:07:40 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ static t_menu_l	*fill_menu_left(t_app *app, t_menu_l *tmp, int *h, int *w)
 		"srcs/img/number3.xpm", w, h);
 	tmp->mandel_col->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/mandelbrot_blue.xpm", w, h);
-	// tmp->mandel_red->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-	// "srcs/img/mandelbrot_red.xpm", w, h);
 	tmp->julia_col->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 	"srcs/img/julia_blue.xpm", w, h);
-	// tmp->julia_red->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-	// 	"srcs/img/julia_red.xpm", w, h);
 	tmp->button_grey->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/button_grey.xpm", w, h);
 	return (tmp);

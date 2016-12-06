@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_img_bottom_to_win.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 13:52:44 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:04:30 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/12/05 17:57:56 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/12/05 22:50:53 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int ac, char **av)
+void		put_img_menu_b_to_win(t_app *app, t_menu_b *tmp)
 {
-	t_app	*app;
-
-	app = NULL;
-	if (ac == 2)
-	{
-		if (!ft_strcmp(av[1], "mandelbrot") || !ft_strcmp(av[1], "julia"))
-		{
-			if ((start_treatment(app, av[1])) == -1)
-				return (-1);
-			app_destroy(app);
-		}
-		else
-		{
-			ft_putstr_fd(ERR2, 0);
-			return (-1);
-		}
-	}
-	else
-		ft_putstr_fd(ERR1, 0);
-	return (0);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		tmp->slider_motion->img_ptr, 1670, 160);
 }
