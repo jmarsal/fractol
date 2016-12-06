@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:05:31 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 09:43:43 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,15 @@ static t_app	*create_app(void)
 ** Init app 
 */
 
-t_app		*init_app(const char *mapname, int *h, int *w)
+t_app		*init_app(int map, int *h, int *w)
 {
 	t_app	*tmp;
 
 	if (!(tmp = create_app()))
 		return (NULL);
-	if (!ft_strcmp(mapname, "mandelbrot"))
+	if (map == 1)
 		tmp->mapname = 1;
-	if (!ft_strcmp(mapname, "julia"))
+	else if (map == 2)
 		tmp->mapname = 2;
 	init_mlx(tmp);
 	tmp->background = init_img(tmp, WIDTH, HEIGHT);
@@ -95,7 +95,7 @@ t_app		*init_app(const char *mapname, int *h, int *w)
 void		app_destroy(t_app *app)
 {
 	ft_free(MLX_PTR);
-	ft_free(MLX_WIN);
+	// ft_free(MLX_WIN);
 	ft_free(app->img->img_ptr);
 	ft_free(app->img->data);
 	ft_free(app->img);

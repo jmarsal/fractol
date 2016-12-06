@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:18:00 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 09:33:35 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	refresh_win(t_app *app)
 ** Init app, lance les calculs en fonction de la mapname et print
 */
 
-int	start_treatment(t_app *app, const char *mapname)
+int	start_treatment(t_app *app, int map)
 {
 	int		h;
 	int		w;
@@ -63,15 +63,12 @@ int	start_treatment(t_app *app, const char *mapname)
 	w = WIDTH;
 
 	/* Init de l'app en fonction de la map */
-	if (!(app = init_app(mapname, &h, &w)))
+	if (!(app = init_app(map, &h, &w)))
 		return (-1);
 
 	/* Replissage de la data en fonction de la fractale */
 	if (app->mapname == 1)
-	{
 		draw_mandelbrot(app);
-		app->data->x1 -= 50;
-	}
 	else if (app->mapname == 2)
 		draw_julia(app);
 	
@@ -88,6 +85,8 @@ int	start_treatment(t_app *app, const char *mapname)
 	/* Win top */
 	if (app->mapname == 1)
 		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
+	else if (app->mapname == 2)
+		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "JULIA");
 
 	/* Replissage de l'image en fonction de la fractale */
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,

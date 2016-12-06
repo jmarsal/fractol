@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:22:14 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 09:45:19 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 
 	w = WIDTH;
 	h = HEIGHT;
-	if (app->data->motion == 1)
+	if (app->data->motion == 1)//motion
 	{
-		printf("x = %d, y = %d, motion = %d\n", x, y, app->data->motion);		
+		// printf("x = %d, y = %d, motion = %d\n", x, y, app->data->motion);		
 		if (x > 350 && x < WIDTH_DRAW + 350 && y > 100 && y < HEIGHT_DRAW + 100)
 		{
 			x -= 350;
@@ -44,7 +44,7 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 		}
 		refresh_win(app);
 	}
-	if (x >= 30 && x <= 295 && y >= 115 && y <= 190)
+	if (x >= 30 && x <= 295 && y >= 115 && y <= 190) //bouton mandelbrot
 	{
 		mlx_destroy_image(MLX_PTR, app->menu_l->mandel_col);
 		app->menu_l->mandel_col = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
@@ -53,7 +53,7 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 		mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->menu_l->mandel_col->img_ptr, 70, 105);
 	}
-	else if (x >= 30 && x <= 295 && y >= 210 && y <= 285)
+	else if (x >= 30 && x <= 295 && y >= 210 && y <= 285) //bouton julia
 	{
 		mlx_destroy_image(MLX_PTR, app->menu_l->julia_col);
 		app->menu_l->julia_col = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
@@ -83,44 +83,48 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 
 int				mouse_funct(int button, int x, int y, t_app *app)
 {
-	double	x_real;
-	double	y_real;
+	double	mouse_x_pos;
+	double	mouse_y_pos;
 	int		w;
 	int		h;
 
 	w = WIDTH;
 	h = HEIGHT;
-	if (x > 350 && x < WIDTH_DRAW + 350 && y > 100 && y < HEIGHT_DRAW + 100)
+	if (x > 350 && x < WIDTH_DRAW + 350 && y > 100 && y < HEIGHT_DRAW + 100) //ZOOM
 	{
 		x -= 350;
 		y -= 100;
-		x_real = (x / app->data->zoom) + app->data->x1;
-		y_real = (y / app->data->zoom) + app->data->y1;
+		mouse_x_pos = (x / app->data->zoom) + app->data->x1;
+		mouse_y_pos = (y / app->data->zoom) + app->data->y1;
 		if (button == ZOOMUP)
 		{
 			app->data->zoom *= 1.1;
-			app->data->x1 = x_real - (x / app->data->zoom);
-			app->data->y1 = y_real - (y / app->data->zoom);
+			app->data->x1 = mouse_x_pos - (x / app->data->zoom);
+			app->data->y1 = mouse_y_pos - (y / app->data->zoom);
 		}
 		if (button == ZOOMDOWN)
 		{
 			app->data->zoom /= 1.1;
-			app->data->x1 = x_real - (x / app->data->zoom);
-			app->data->y1 = y_real - (y / app->data->zoom);
+			app->data->x1 = mouse_x_pos - (x / app->data->zoom);
+			app->data->y1 = mouse_y_pos - (y / app->data->zoom);
 		}
 		refresh_win(app);
 	}
 	if (x >= 30 && x <= 295 && y >= 115 && y <= 190) // bouton mandelbrot
 	{
+		// app_destroy(app);
 		app->mapname = 1;
-		app->data = init_coords_mandelbrot();
 		refresh_win(app);
+		// mlx_destroy_image(MLX_PTR, app->img);
+		// start_treatment(app, 1);
 	}
 	else if (x >= 30 && x <= 295 && y >= 205 && y <= 280) // bouton julia
 	{
+		// app_destroy(app);
 		app->mapname = 2;
-		app->data = init_julia();
 		refresh_win(app);
+		// mlx_destroy_image(MLX_PTR, app->img);
+		// start_treatment(app, 2);
 	}
 	else if (app->data->motion == 0 &&
 		x >= 1675 && x <= 1750 && y >= 165 && y <= 200)

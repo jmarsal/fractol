@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 13:52:44 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:04:30 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 09:19:14 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 int	main(int ac, char **av)
 {
 	t_app	*app;
+	int		map;
 
 	app = NULL;
+	map = 0;
 	if (ac == 2)
 	{
-		if (!ft_strcmp(av[1], "mandelbrot") || !ft_strcmp(av[1], "julia"))
+		if (!ft_strcmp(av[1], "mandelbrot"))
+			map = 1;
+		else if (!ft_strcmp(av[1], "julia"))
+			map = 2;
+		if (map == 1 || map == 2)
 		{
-			if ((start_treatment(app, av[1])) == -1)
+			if ((start_treatment(app, map)) == -1)
 				return (-1);
 			app_destroy(app);
 		}
