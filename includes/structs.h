@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/05 18:00:42 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 16:34:14 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ typedef struct	s_menu_l
 typedef struct	s_menu_b
 {
 	t_img		*slider_motion;
+	t_img		*slider_iter;
+	t_img		*plus;
+	t_img		*minus;
 }				t_menu_b;
 
 typedef struct	s_data
@@ -56,6 +59,7 @@ typedef struct	s_data
 	int			x;
 	int			y;
 	int			iter;
+	int			iter_on;
 	int			motion;
 	int			i;
 }				t_data;

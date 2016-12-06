@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:19:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 14:57:14 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_data	*init_coords_mandelbrot(void)
 	if (!(data = ft_memalloc(sizeof(t_data))))
 		return (NULL);
 	data->iter = 100;
+	data->iter_on = 0;
 	data->motion = 0;
 	data->x1 = -2.02;
 	data->x2 = 0.6;

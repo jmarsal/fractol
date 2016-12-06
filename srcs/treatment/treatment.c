@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 09:33:35 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 17:06:09 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,15 @@ void		put_pixel_and_choose_color(t_app *app)
 
 int	refresh_win(t_app *app)
 {
+	int		h;
+	int		w;
+
+	h = HEIGHT;
+	w = WIDTH;
 	mlx_destroy_image(MLX_PTR, app->img);
 	app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
+	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/background.xpm", &w, &h);
 	if (app->mapname == 1)
 		draw_mandelbrot(app);
 	if (app->mapname == 2)

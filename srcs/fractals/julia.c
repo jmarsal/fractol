@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 00:31:25 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 01:06:20 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 14:57:02 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_data		*init_julia(void)
 	if (!(data = (t_data *)malloc(sizeof(t_data))))
 		return (NULL);
 	data->iter = 100;
+	data->iter_on = 0;
 	data->motion = 0;
 	data->x1 = -1.95;
 	data->y1 = -1.95;

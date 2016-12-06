@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 09:20:24 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/06 16:45:37 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "define.h"
 # include "structs.h"
 # include "libft.h"
+
+#include <stdio.h>
 
 int			start_treatment(t_app	*app, int map);
 void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp);
@@ -54,7 +56,13 @@ void		draw_julia(t_app *app);
 int			key_funct(int keycode, t_app *app);
 int			mouse_funct(int button, int x, int y, t_app *app);
 int			mouse_motion_menu(int x, int y, t_app *app);
-int			mouse_motion_fract(int x, int y, t_app *app);
 void		move_tray(int keycode, t_app *app);
+void		motion_button_activate_mandel(int x, int y, t_app *app);
+void		motion_button_activate_julia(int x, int y, t_app *app);
+void		motion_button_desactivate(t_app *app);
+void		if_slider_iter_on(int x, int y, t_app *app);
+void		if_slider_iter_off(int x, int y, t_app *app);
+void		if_plus_iter(int x, int y, t_app *app);
+void		if_minus_iter(int x, int y, t_app *app);
 
 #endif

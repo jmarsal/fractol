@@ -54,6 +54,9 @@ SOURCES = main.c \
 					julia.c \
 					events.c \
 					key_fonctions.c \
+					mouse_func.c \
+					button_motion.c \
+					slider_iter.c \
 
 # Libft
  LIBFT_PATH = libft
