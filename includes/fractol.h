@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:46:26 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 12:43:43 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void		origin(int keycode, t_app *app);
 
 t_app		*init_app(int map, int *h, int *w);
 t_menu_l	*init_left_menu(t_app *app, int *h, int *w);
+t_menu_l	*fill_menu_left(t_app *app, t_menu_l *tmp, int *h, int *w);
+t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w);
 t_menu_b	*init_bottom_menu(t_app *app, int *h, int *w);
 void		init_mlx(t_app *app);
 t_img		*init_img(t_app *app, int width, int height);

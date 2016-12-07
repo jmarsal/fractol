@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 09:43:43 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 16:43:18 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ static t_app	*create_app(void)
 	return (app);
 }
 
+static void	init_bool(t_bool *bool_button)
+{
+	bool_button->mandel = 0;
+	bool_button->julia = 0;
+}
+
 /*
 ** Init app 
 */
@@ -85,6 +91,8 @@ t_app		*init_app(int map, int *h, int *w)
 	tmp->menu_b = init_bottom_menu(tmp, h, w);
 	tmp->img = init_img(tmp, WIDTH_DRAW, HEIGHT_DRAW);
 	tmp->data = init_win(tmp);
+	init_bool(&tmp->bool_button);
+	tmp->burger = 0;
 	return (tmp);
 }
 
@@ -95,7 +103,6 @@ t_app		*init_app(int map, int *h, int *w)
 void		app_destroy(t_app *app)
 {
 	ft_free(MLX_PTR);
-	// ft_free(MLX_WIN);
 	ft_free(app->img->img_ptr);
 	ft_free(app->img->data);
 	ft_free(app->img);

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:46:43 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 16:44:02 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define STRUCTS_H
 
 # include "libft.h"
+
+typedef struct	s_bool
+{
+	int			mandel;
+	int			julia;
+}				t_bool;
 
 typedef struct	s_img
 {
@@ -27,12 +33,9 @@ typedef struct	s_img
 typedef struct	s_menu_l
 {
 	t_img		*menu_ico;
-	t_img		*one;
-	t_img		*two;
-	t_img		*three;
-	t_img		*button_grey;
-	t_img		*mandel_col;
-	t_img		*julia_col;
+	t_img		*menu_fract;
+	t_img		*menu_fract2;
+	t_img		*menu_fract3;
 }				t_menu_l;
 
 typedef struct	s_menu_b
@@ -71,9 +74,11 @@ typedef struct	s_app
 	t_menu_b	*menu_b;
 	t_img		*background;
 	t_data		*data;
+	t_bool		bool_button;
 	void		*mlx_ptr;
 	void		*mlx_win;
 	int			mapname;
+	int			burger;
 }				t_app;
 
 #endif

@@ -6,18 +6,18 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 17:51:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:49:26 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 12:42:40 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w)
+t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w)
 {
-		tmp->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-			"srcs/img/slider_off.xpm", w, h);
-		tmp->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
-			"srcs/img/slider_off.xpm", w, h);
+	tmp->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/slider_off.xpm", w, h);
+	tmp->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/slider_off.xpm", w, h);
 	tmp->plus->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/plus.xpm", w, h);
 	tmp->minus->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
@@ -25,7 +25,7 @@ static t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w)
 	return (tmp);
 }
 
-t_menu_b		*init_bottom_menu(t_app *app, int *h, int *w)
+t_menu_b	*init_bottom_menu(t_app *app, int *h, int *w)
 {
 	t_menu_b	*tmp;
 

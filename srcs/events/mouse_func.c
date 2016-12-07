@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:48:33 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 16:01:08 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,35 @@
 
 static void		if_clic_button(int x, int y, t_app *app)
 {
+	int		w;
+	int		h;
+
+	w = WIDTH;
+	h = HEIGHT;
 	if (x >= 30 && x <= 295 && y >= 115 && y <= 190) // bouton mandelbrot
 	{
 		app->mapname = 1;
 		app->data = init_coords_mandelbrot();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
 	}
 	else if (x >= 30 && x <= 295 && y >= 205 && y <= 280) // bouton julia
 	{
 		app->mapname = 2;
 		app->data = init_julia();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 40 && x <= 100 && y >= 40 && y <= 90)
+	{
+		if (app->burger == 0)
+			app->burger = 1;
+		else
+			app->burger = 0;
 	}
 }
 
@@ -64,8 +84,6 @@ static void		if_slider_motion_off(int x, int y, int button, t_app *app)
 	{
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
-		mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		app->menu_b->slider_motion->img_ptr, 1670, 160);
 		app->data->motion = 0;
 	}
 }
@@ -82,8 +100,6 @@ static void		if_slider_motion_on(int x, int y, int button, t_app *app)
 	{
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_on.xpm", &w, &h);
-		mlx_put_image_to_window(MLX_PTR, MLX_WIN,
-		app->menu_b->slider_motion->img_ptr, 1670, 160);
 		app->data->motion = 1;
 	}
 }
@@ -101,7 +117,8 @@ int				mouse_funct(int button, int x, int y, t_app *app)
 		if_slider_iter_on(x, y, app);
 	if_plus_iter(x, y, app);
 	if_minus_iter(x, y, app);
-	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE, ft_itoa_base((long)app->data->iter, 10));
+	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
+		ft_itoa_base((long)app->data->iter, 10));
 	if_clic_button(x, y, app);
 	refresh_win(app);
 	return (0);

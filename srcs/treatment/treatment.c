@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:51:35 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 14:00:16 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,33 @@ int	refresh_win(t_app *app)
 
 	h = HEIGHT;
 	w = WIDTH;
-	mlx_destroy_image(MLX_PTR, app->img);
-	app->img = init_img(app, WIDTH_DRAW, HEIGHT_DRAW);
+	mlx_clear_window(MLX_PTR, MLX_WIN);
+		
+	/* Background */
 	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/background.xpm", &w, &h);
+	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
+		app->background->img_ptr, 0, 0);
+
 	if (app->mapname == 1)
+	{
 		draw_mandelbrot(app);
+		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
+	}
 	if (app->mapname == 2)
+	{
 		draw_julia(app);
+		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "JULIA");
+	}
+	/* put menu to win */
+	put_img_menu_l_to_win(app, app->menu_l);
+	put_img_menu_b_to_win(app, app->menu_b);
+
+	/* Win top */
+	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
+		ft_itoa_base((long)app->data->iter, 10));
+
+	/* Replissage de l'image en fonction de la fractale */
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->img->img_ptr, SIZE_MENU_W, SIZE_MENU_H);
 	return (0);
@@ -94,6 +113,8 @@ int	start_treatment(t_app *app, int map)
 		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
 	else if (app->mapname == 2)
 		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "JULIA");
+	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
+		ft_itoa_base((long)app->data->iter, 10));
 
 	/* Replissage de l'image en fonction de la fractale */
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
