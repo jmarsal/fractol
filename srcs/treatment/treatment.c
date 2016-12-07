@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 17:06:09 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/12/07 09:51:35 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	start_treatment(t_app *app, int map)
 		draw_mandelbrot(app);
 	else if (app->mapname == 2)
 		draw_julia(app);
-	
+		
 	/* Background */
 	app->background->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/background.xpm", &w, &h);

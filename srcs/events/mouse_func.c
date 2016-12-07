@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 11:46:05 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 16:54:29 by jmarsal          ###   ########.fr       */
+/*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
+/*   Updated: 2016/12/07 09:48:33 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,8 @@ int				mouse_funct(int button, int x, int y, t_app *app)
 		if_slider_iter_on(x, y, app);
 	if_plus_iter(x, y, app);
 	if_minus_iter(x, y, app);
-		mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE, ft_itoa_base((long)app->data->iter, 10));
+	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE, ft_itoa_base((long)app->data->iter, 10));
 	if_clic_button(x, y, app);
-	refresh_win(app);	
+	refresh_win(app);
 	return (0);
 }

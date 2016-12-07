@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 16:02:13 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 09:47:42 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static void		mouse_motion_fract(int x, int y, t_app *app)
 			tmp_x = x;
 			tmp_y = y;
 		}
-		// refresh_win(app);
 	}
 }
 
@@ -54,7 +53,7 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 		motion_button_activate_julia(x, y, app);
 	else
 		motion_button_desactivate(app);
-	refresh_win(app);	
+	refresh_win(app);
 	return (0);
 }
 
