@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 12:43:43 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:16:40 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 # define FRACTOL_H
 
 # include <mlx.h>
+# include <math.h>
 # include "define.h"
 # include "structs.h"
 # include "libft.h"
 
 #include <stdio.h>
 
-int			start_treatment(t_app	*app, int map);
+int			start_treatment(t_app	*app, int map, char *mapname);
 void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp);
 void		put_img_menu_b_to_win(t_app *app, t_menu_b *tmp);
 int			refresh_win(t_app *app);
 void		origin(int keycode, t_app *app);
+int			close_win(t_app *app);
 
 /*
 ** memory
 */
 
-t_app		*init_app(int map, int *h, int *w);
+t_app		*init_app(int map, int *h, int *w, char *mapname);
 t_menu_l	*init_left_menu(t_app *app, int *h, int *w);
 t_menu_l	*fill_menu_left(t_app *app, t_menu_l *tmp, int *h, int *w);
 t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w);
@@ -41,6 +43,7 @@ void		app_destroy(t_app *app);
 t_data		*init_coords_mandelbrot(void);
 t_data		*init_julia(void);
 t_data		*init_win(t_app *app);
+void		init_bool(t_bool *bool_button);
 
 /*
 ** output

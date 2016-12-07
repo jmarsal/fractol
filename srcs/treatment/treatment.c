@@ -6,13 +6,13 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 14:00:16 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:17:54 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	close_win(t_app *app)
+int			close_win(t_app *app)
 {
 	ft_free(MLX_PTR);
 	exit(0);
@@ -52,21 +52,17 @@ int	refresh_win(t_app *app)
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->background->img_ptr, 0, 0);
 
-	if (app->mapname == 1)
-	{
+	if (app->mapname == 1 || app->mapname == 3 ||
+		app->mapname == 4 || app->mapname == 5)
 		draw_mandelbrot(app);
-		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
-	}
-	if (app->mapname == 2)
-	{
+	else
 		draw_julia(app);
-		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "JULIA");
-	}
 	/* put menu to win */
 	put_img_menu_l_to_win(app, app->menu_l);
 	put_img_menu_b_to_win(app, app->menu_b);
 
 	/* Win top */
+	mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, app->fractal);
 	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
 		ft_itoa_base((long)app->data->iter, 10));
 
@@ -80,7 +76,7 @@ int	refresh_win(t_app *app)
 ** Init app, lance les calculs en fonction de la mapname et print
 */
 
-int	start_treatment(t_app *app, int map)
+int	start_treatment(t_app *app, int map, char *mapname)
 {
 	int		h;
 	int		w;
@@ -89,13 +85,14 @@ int	start_treatment(t_app *app, int map)
 	w = WIDTH;
 
 	/* Init de l'app en fonction de la map */
-	if (!(app = init_app(map, &h, &w)))
+	if (!(app = init_app(map, &h, &w, mapname)))
 		return (-1);
 
 	/* Replissage de la data en fonction de la fractale */
-	if (app->mapname == 1)
+	if (app->mapname == 1 || app->mapname == 3 ||
+		app->mapname == 4 || app->mapname == 5)
 		draw_mandelbrot(app);
-	else if (app->mapname == 2)
+	else
 		draw_julia(app);
 		
 	/* Background */
@@ -109,10 +106,7 @@ int	start_treatment(t_app *app, int map)
 	put_img_menu_b_to_win(app, app->menu_b);
 
 	/* Win top */
-	if (app->mapname == 1)
-		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "MANDELBROT");
-	else if (app->mapname == 2)
-		mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, "JULIA");
+	mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, app->fractal);
 	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
 		ft_itoa_base((long)app->data->iter, 10));
 

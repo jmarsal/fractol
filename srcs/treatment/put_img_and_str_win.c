@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 00:21:02 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 17:06:22 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:12:29 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,33 @@ static void	put_str_to_win(t_app *app)
 	mlx_string_put(MLX_PTR, MLX_WIN, 1755, 268, RED, "Iteration");
 	if (app->burger == 1)
 	{
-		if (app->bool_button.mandel == 0)
-			mlx_string_put(MLX_PTR, MLX_WIN, 110, 136, BLUE_MENU, "MANDELBROT");
-		else
-			mlx_string_put(MLX_PTR, MLX_WIN, 110, 136, RED, "MANDELBROT");
-		if (app->bool_button.julia == 0)
-			mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, BLUE_MENU, "JULIA");
-		else
+		app->bool_button.mandel == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 110, 138, BLUE_MENU, "MANDELBROT") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 110, 138, RED, "MANDELBROT");
+		app->bool_button.julia == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, BLUE_MENU, "JULIA") :
 			mlx_string_put(MLX_PTR, MLX_WIN, 135, 230, RED, "JULIA");
+		app->bool_button.bship == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 135, 325, BLUE_MENU, "BSHIP") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 135, 325, RED, "BSHIP");
+		app->bool_button.sword == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 135, 418, BLUE_MENU, "SWORD") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 135, 418, RED, "SWORD");
+		app->bool_button.chameleon == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 115, 510, BLUE_MENU, "CHAMELEON") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 115, 510, RED, "CHAMELEON");
+		app->bool_button.tricorn == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 122, 606, BLUE_MENU, "TRICORN") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 122, 606, RED, "TRICORN");
+		app->bool_button.celtic == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 125, 698, BLUE_MENU, "CELTIC") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 125, 698, RED, "CELTIC");
+		app->bool_button.my_fractal == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 110, 790, BLUE_MENU, "MY FRACTAL") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 110, 790, RED, "MY FRACTAL");
+		app->bool_button.exit == 0 ?
+			mlx_string_put(MLX_PTR, MLX_WIN, 130, 885, BLUE_MENU, "EXIT") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 130, 885, RED, "EXIT");
 	}
 }
 

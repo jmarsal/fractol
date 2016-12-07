@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 16:43:18 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:10:41 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,28 @@ static t_app	*create_app(void)
 	app->menu_l = NULL;
 	app->menu_b = NULL;
 	app->data = NULL;
+	app->fractal = NULL;
 	return (app);
 }
 
-static void	init_bool(t_bool *bool_button)
+void		init_bool(t_bool *bool_button)
 {
 	bool_button->mandel = 0;
 	bool_button->julia = 0;
+	bool_button->bship = 0;
+	bool_button->sword = 0;
+	bool_button->chameleon = 0;
+	bool_button->tricorn = 0;
+	bool_button->celtic = 0;
+	bool_button->my_fractal = 0;
+	bool_button->exit = 0;
 }
 
 /*
 ** Init app 
 */
 
-t_app		*init_app(int map, int *h, int *w)
+t_app		*init_app(int map, int *h, int *w, char *mapname)
 {
 	t_app	*tmp;
 
@@ -85,6 +93,18 @@ t_app		*init_app(int map, int *h, int *w)
 		tmp->mapname = 1;
 	else if (map == 2)
 		tmp->mapname = 2;
+	else if (map == 3)
+		tmp->mapname = 3;
+	else if (map == 4)
+		tmp->mapname = 4;
+	else if (map == 5)
+		tmp->mapname = 5;
+	else if (map == 6)
+		tmp->mapname = 6;
+	else if (map == 7)
+		tmp->mapname = 7;
+	else if (map == 8)
+		tmp->mapname = 8;
 	init_mlx(tmp);
 	tmp->background = init_img(tmp, WIDTH, HEIGHT);
 	tmp->menu_l = init_left_menu(tmp, h, w);
@@ -93,6 +113,7 @@ t_app		*init_app(int map, int *h, int *w)
 	tmp->data = init_win(tmp);
 	init_bool(&tmp->bool_button);
 	tmp->burger = 0;
+	tmp->fractal = ft_strtoupper(mapname);
 	return (tmp);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 16:01:08 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:17:50 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void		if_clic_button(int x, int y, t_app *app)
 	if (x >= 30 && x <= 295 && y >= 115 && y <= 190) // bouton mandelbrot
 	{
 		app->mapname = 1;
+		app->fractal = "MANDELBROT";
 		app->data = init_coords_mandelbrot();
 		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
@@ -31,12 +32,75 @@ static void		if_clic_button(int x, int y, t_app *app)
 	else if (x >= 30 && x <= 295 && y >= 205 && y <= 280) // bouton julia
 	{
 		app->mapname = 2;
+		app->fractal = "JULIA";
 		app->data = init_julia();
 		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
 	}
+	else if (x >= 30 && x <= 295 && y >= 300 && y <= 375)
+	{
+		app->mapname = 3;
+		app->fractal = "BSHIP";
+		app->data = init_coords_mandelbrot();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 393 && y <= 470)
+	{
+		app->mapname = 7;
+		app->fractal = "SWORD";
+		app->data = init_julia();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 485 && y <= 560)
+	{
+		app->mapname = 6;
+		app->fractal = "CHAMELEON";
+		app->data = init_julia();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 580 && y <= 655)
+	{
+		app->mapname = 4;
+		app->fractal = "TRICORN";
+		app->data = init_coords_mandelbrot();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 673 && y <= 750)
+	{
+		app->mapname = 5;
+		app->fractal = "CELTIC";
+		app->data = init_coords_mandelbrot();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 765 && y <= 840)
+	{
+		app->mapname = 8;
+		app->fractal = "TEST";
+		app->data = init_julia();
+		app->menu_b->slider_iter->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+			"srcs/img/slider_off.xpm", &w, &h);
+	}
+	else if (x >= 30 && x <= 295 && y >= 857 && y <= 932)
+		close_win(app);
 	else if (x >= 40 && x <= 100 && y >= 40 && y <= 90)
 	{
 		if (app->burger == 0)

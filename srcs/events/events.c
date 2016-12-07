@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:47:42 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:15:48 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void		mouse_motion_fract(int x, int y, t_app *app)
 	static int	tmp_x;
 	static int	tmp_y;
 	
-	printf("x = %d, y = %d\n", x, y);
 	if (app->data->motion == 1)//motion
 	{
 		if (x > 350 && x < WIDTH_DRAW + 350 && y > 100 && y < HEIGHT_DRAW + 100)
@@ -47,10 +46,12 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 {
 	
 	mouse_motion_fract(x, y, app);
-	if (x >= 30 && x <= 295 && y >= 115 && y <= 190)//bouton mandelbrot
+	//bouton mandelbrot
+	if (x >= 30 && x <= 295 && y >= 115 && y <= 932)
+	{
 		motion_button_activate_mandel(x, y, app);
-	else if (x >= 30 && x <= 295 && y >= 210 && y <= 285) //bouton julia
 		motion_button_activate_julia(x, y, app);
+	}
 	else
 		motion_button_desactivate(app);
 	refresh_win(app);

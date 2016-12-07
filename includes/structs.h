@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 16:44:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 00:07:33 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ typedef struct	s_bool
 {
 	int			mandel;
 	int			julia;
+	int			bship;
+	int			sword;
+	int			chameleon;
+	int			tricorn;
+	int			celtic;
+	int			my_fractal;
+	int			exit;
 }				t_bool;
 
 typedef struct	s_img
@@ -77,6 +84,7 @@ typedef struct	s_app
 	t_bool		bool_button;
 	void		*mlx_ptr;
 	void		*mlx_win;
+	char		*fractal;
 	int			mapname;
 	int			burger;
 }				t_app;

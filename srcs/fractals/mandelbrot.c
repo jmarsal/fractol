@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/06 14:57:14 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/07 23:44:44 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,24 @@ static void get_data_result(t_app *app)
 		< 4 && app->data->i < app->data->iter)
 	{
 		app->data->tmp = app->data->z_r;
-		app->data->z_r = app->data->z_r * app->data->z_r - app->data->z_i *
-			app->data->z_i + app->data->c_r;
-		app->data->z_i = 2 * app->data->z_i * app->data->tmp + app->data->c_i;
+		if (app->mapname == 3)
+			app->data->z_r = fabs(app->data->z_r * app->data->z_r -
+				app->data->z_i * app->data->z_i + app->data->c_r);
+		else if (app->mapname == 5)
+			app->data->z_r = fabs(app->data->z_r * app->data->z_r -
+				app->data->z_i * app->data->z_i) + app->data->c_r;
+		else
+			app->data->z_r = app->data->z_r * app->data->z_r - app->data->z_i *
+				app->data->z_i + app->data->c_r;
+		if (app->mapname == 3)
+			app->data->z_i = fabs(2 * app->data->z_i *
+				app->data->tmp + app->data->c_i);
+		else if (app->mapname == 4)
+			app->data->z_i = -2 * app->data->z_i *
+				app->data->tmp + app->data->c_i;
+		else
+			app->data->z_i = 2 * app->data->z_i *
+				app->data->tmp + app->data->c_i;
 		app->data->i++;
 	}
 	put_pixel_and_choose_color(app);
