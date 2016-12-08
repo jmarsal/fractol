@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 17:57:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 16:23:24 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 23:24:08 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	fill_text(t_app *app)
 	mlx_string_put(MLX_PTR, MLX_WIN, 1778, 657, RED, "RED");
 	mlx_string_put(MLX_PTR, MLX_WIN, 1765, 707, ORANGE, "ORANGE");
 	mlx_string_put(MLX_PTR, MLX_WIN, 1770, 757, BLUE, "BLUE");
+	mlx_string_put(MLX_PTR, MLX_WIN, 820, 930, RED, "PRESS O FOR RESET PARAMETERS");
 }
 
 void		put_img_menu_b_to_win(t_app *app, t_menu_b *tmp)

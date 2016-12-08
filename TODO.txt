@@ -1,5 +1,1 @@
 1) Ajouter un bouton pour un demarrage a black
-2) Gerer si 2 fractals em meme temps
-3) Si pb de nom envoyer un mess d'erreur : "type ./fractal help" for more informations
-4) texte pour bouton origin
-5) Gerer la gestion de deplacement progressive

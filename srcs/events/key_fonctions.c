@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 09:31:33 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 17:58:35 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,35 @@ void	origin(int keycode, t_app *app)
 	}
 }
 
+static double	progressive_i(t_app *app)
+{
+	static double	i = 0.2;
+
+	if (app->data->zoom <= 100)
+		i = 0.2;
+	if (app->data->zoom > 100 && app->data->zoom <= 1000)
+		i = 0.02;
+	if (app->data->zoom > 1000 && app->data->zoom <= 10000)
+		i = 0.002;
+	if (app->data->zoom > 10000 && app->data->zoom <= 100000)
+		i = 0.0002;
+	if (app->data->zoom > 100000)
+		i = 0.00002;
+	return (i);
+}
+
 void			move_tray(int keycode, t_app *app)
 {
+	double	i;
+
+	i = progressive_i(app);
 	if (keycode == LEFT)
-		app->data->x1 += 0.05;
+		app->data->x1 += i;
 	else if (keycode == RIGHT)
-		app->data->x1 -= 0.05;
+		app->data->x1 -= i;
 	else if (keycode == DOWN)
-		app->data->y1 += 0.05;
+		app->data->y1 += i;
 	else if (keycode == UP)
-		app->data->y1 -= 0.05;
+		app->data->y1 -= i;
 	refresh_win(app);
 }

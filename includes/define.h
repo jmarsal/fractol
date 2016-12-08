@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 16:15:53 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 23:25:23 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@
 ** Colors
 */
 
-# define BLACK 0x000000
+# define GREEN 0xb6ff48
 # define BLUE 0x1d4a64
 # define BLUE_MENU 0x05199d
 # define YELLOW 0xEAF74D
 # define PINK 0xff00c1
 # define RED 0xff0000
-# define ORANGE 0xFF5733
+# define ORANGE 0xFFA500
 # define MOUSE_ON BLUE
 # define MOUSE_OFF RED
 # define COLOR_START BLACK
@@ -60,7 +60,11 @@
 ** Errors
 */
 
-# define ERR1 "\033[31mError\033[0m : format = ./fractol map\n"
+# define ERR3 "\033[31mError\033[0m : format = ./fractol [fractal]\n"
+# define ERR1 ERR3 "\tType ./fractol [help] for more informations\n"
 # define ERR2 "\033[31mError\033[0m : try with mandelbrot\n"
+# define HELP3 "format = ./fractol [fractal]\n"
+# define HELP2 HELP3 "You can try with : [mandelbrot] [julia] [bship] [tricorn]"
+# define HELP HELP2 " [celtic] [chameleon] [sword] [my_fractal]\n"
 
 #endif
