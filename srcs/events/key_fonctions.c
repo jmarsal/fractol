@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 09:48:16 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 09:31:33 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	origin(int keycode, t_app *app)
 {
 	if (keycode == ORIGIN)
 	{
-		if (app->mapname == 1)
-			app->data = init_coords_mandelbrot();
+		if (app->mapname == 1 || app->mapname == 3 ||
+			app->mapname == 4 || app->mapname == 5)
+			app->data = init_coords_mandelbrot(app);
+		else
+			app->data = init_julia(app);
 		refresh_win(app);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 00:16:40 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 09:45:37 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ t_menu_b	*init_bottom_menu(t_app *app, int *h, int *w);
 void		init_mlx(t_app *app);
 t_img		*init_img(t_app *app, int width, int height);
 void		app_destroy(t_app *app);
-t_data		*init_coords_mandelbrot(void);
-t_data		*init_julia(void);
+t_data		*init_coords_mandelbrot(t_app *app);
+t_data		*init_julia(t_app *app);
 t_data		*init_win(t_app *app);
 void		init_bool(t_bool *bool_button);
+void		check_color_on(t_app *app, t_data *data);
 
 /*
 ** output

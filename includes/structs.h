@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 00:07:33 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 09:16:36 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,20 @@ typedef struct	s_data
 	int			i;
 }				t_data;
 
+typedef struct	s_theme
+{
+	int			t1;
+	int			t1_on;
+	int			t2;
+	int			t2_on;
+	int			t3;
+	int			t3_on;
+	int			t4;
+	int			t4_on;
+	int			t5;
+	int			t5_on;
+}				t_theme;
+
 typedef struct	s_app
 {
 	t_img		*img;
@@ -82,6 +96,7 @@ typedef struct	s_app
 	t_img		*background;
 	t_data		*data;
 	t_bool		bool_button;
+	t_theme		theme;
 	void		*mlx_ptr;
 	void		*mlx_win;
 	char		*fractal;

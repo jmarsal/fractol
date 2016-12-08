@@ -6,19 +6,19 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 00:31:25 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 23:54:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 09:46:04 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_data		*init_julia(void)
+t_data		*init_julia(t_app *app)
 {
 	t_data *data;
 
 	if (!(data = (t_data *)malloc(sizeof(t_data))))
 		return (NULL);
-	data->iter = 100;
+	data->iter = 255;
 	data->iter_on = 0;
 	data->motion = 0;
 	data->x1 = -1.95;
@@ -26,7 +26,7 @@ t_data		*init_julia(void)
 	data->zoom = 204;
 	data->c_r = 0.285;
 	data->c_i = 0.01;
-	data->color = PINK;
+	check_color_on(app, data);
 	data->x = 0;
 	data->y = 0;
 	return (data);

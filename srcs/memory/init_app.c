@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 16:02:26 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 00:10:41 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 09:52:46 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ t_data			*init_win(t_app *app)
 	t_data	*tmp;
 
 	tmp = NULL;
-	if (app->mapname == 1)
-		tmp = init_coords_mandelbrot();
-	else if (app->mapname == 2)
-		tmp = init_julia();
+	app->theme.t1_on = 1;
+	if (app->mapname == 1 || app->mapname == 3 ||
+		app->mapname == 4 || app->mapname == 5)
+		tmp = init_coords_mandelbrot(app);
+	else
+		tmp = init_julia(app);
 	return (tmp);
 }
 
@@ -77,6 +79,20 @@ void		init_bool(t_bool *bool_button)
 	bool_button->celtic = 0;
 	bool_button->my_fractal = 0;
 	bool_button->exit = 0;
+}
+
+void		init_theme(t_theme *theme)
+{
+	theme->t1 = PINK;
+	theme->t1_on = 0;
+	theme->t2 = BLUE;
+	theme->t2_on = 0;
+	theme->t3 = RED;
+	theme->t3_on = 0;
+	theme->t4 = ORANGE;
+	theme->t4_on = 0;
+	theme->t5 = BLACK;
+	theme->t5_on = 0;
 }
 
 /*
@@ -112,6 +128,7 @@ t_app		*init_app(int map, int *h, int *w, char *mapname)
 	tmp->img = init_img(tmp, WIDTH_DRAW, HEIGHT_DRAW);
 	tmp->data = init_win(tmp);
 	init_bool(&tmp->bool_button);
+	init_theme(&tmp->theme);
 	tmp->burger = 0;
 	tmp->fractal = ft_strtoupper(mapname);
 	return (tmp);
