@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 09:16:36 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:36:18 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ typedef struct	s_menu_l
 typedef struct	s_menu_b
 {
 	t_img		*slider_motion;
-	t_img		*slider_iter;
+	t_img		*slider_t1;
+	t_img		*slider_t2;
+	t_img		*slider_t3;
+	t_img		*slider_t4;
+	t_img		*slider_t5;
 	t_img		*plus;
 	t_img		*minus;
 }				t_menu_b;
@@ -69,7 +73,6 @@ typedef struct	s_data
 	int			x;
 	int			y;
 	int			iter;
-	int			iter_on;
 	int			motion;
 	int			i;
 }				t_data;
@@ -96,7 +99,7 @@ typedef struct	s_app
 	t_img		*background;
 	t_data		*data;
 	t_bool		bool_button;
-	t_theme		theme;
+	t_theme		*theme;
 	void		*mlx_ptr;
 	void		*mlx_win;
 	char		*fractal;

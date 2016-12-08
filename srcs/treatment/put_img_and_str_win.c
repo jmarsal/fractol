@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 00:21:02 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 00:12:29 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 12:37:25 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static void	put_str_to_win(t_app *app)
 {
 	mlx_string_put(MLX_PTR, MLX_WIN, 120, 50, RED, "CHOOSE FRACTALS");
-	mlx_string_put(MLX_PTR, MLX_WIN, 1755, 168, RED, "Motion");
-	mlx_string_put(MLX_PTR, MLX_WIN, 1755, 268, RED, "Iteration");
+	mlx_string_put(MLX_PTR, MLX_WIN, 1740, 105, RED, "MOTION");
+	mlx_string_put(MLX_PTR, MLX_WIN, 1730, 285, RED, "ITERATION");
 	if (app->burger == 1)
 	{
 		app->bool_button.mandel == 0 ?
@@ -44,8 +44,8 @@ static void	put_str_to_win(t_app *app)
 			mlx_string_put(MLX_PTR, MLX_WIN, 110, 790, BLUE_MENU, "MY FRACTAL") :
 			mlx_string_put(MLX_PTR, MLX_WIN, 110, 790, RED, "MY FRACTAL");
 		app->bool_button.exit == 0 ?
-			mlx_string_put(MLX_PTR, MLX_WIN, 130, 885, BLUE_MENU, "EXIT") :
-			mlx_string_put(MLX_PTR, MLX_WIN, 130, 885, RED, "EXIT");
+			mlx_string_put(MLX_PTR, MLX_WIN, 130, 885, PINK, "EXIT") :
+			mlx_string_put(MLX_PTR, MLX_WIN, 95, 885, RED, "EXIT REALLY ??");
 	}
 }
 

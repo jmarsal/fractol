@@ -6,26 +6,26 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 09:55:19 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:41:04 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	check_color_on(t_app *app, t_data *data)
+int		check_color_on(t_app *app, int color)
 {
-	printf("app->theme.t1_on = %d\n", app->theme.t1_on);
 	
-	if (app->theme.t1_on == 1)
-		data->color = app->theme.t1;
-	else if (app->theme.t2_on == 1)
-		data->color = app->theme.t2;
-	else if (app->theme.t3_on == 1)
-		data->color = app->theme.t3;
-	else if (app->theme.t4_on == 1)
-		data->color = app->theme.t4;
+	if (app->theme->t1_on == 1)
+		color = app->theme->t1;
+	else if (app->theme->t2_on == 1)
+		color = app->theme->t2;
+	else if (app->theme->t3_on == 1)
+		color = app->theme->t3;
+	else if (app->theme->t4_on == 1)
+		color = app->theme->t4;
 	else
-		data->color = app->theme.t5;
+		color = app->theme->t5;
+	return (color);
 }
 
 t_data	*init_coords_mandelbrot(t_app *app)
@@ -34,17 +34,14 @@ t_data	*init_coords_mandelbrot(t_app *app)
 
 	if (!(data = ft_memalloc(sizeof(t_data))))
 		return (NULL);
-	data->iter = 255;
-	data->iter_on = 0;
+	data->iter = 125;
 	data->motion = 0;
 	data->x1 = -2.02;
 	data->x2 = 0.6;
 	data->y1 = -2.02;
 	data->y2 = 1.2;
 	data->zoom = 210;
-	printf("app->theme.t1 = %d\n", app->theme.t1);	
-
-	check_color_on(app, data);
+	data->color = check_color_on(app, data->color);
 	data->x = 0;
 	data->y = 0;
 	return (data);

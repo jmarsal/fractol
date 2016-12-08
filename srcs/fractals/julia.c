@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 00:31:25 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 09:46:04 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 12:47:52 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ t_data		*init_julia(t_app *app)
 
 	if (!(data = (t_data *)malloc(sizeof(t_data))))
 		return (NULL);
-	data->iter = 255;
-	data->iter_on = 0;
+	data->iter = 125;
 	data->motion = 0;
 	data->x1 = -1.95;
 	data->y1 = -1.95;
 	data->zoom = 204;
 	data->c_r = 0.285;
 	data->c_i = 0.01;
-	check_color_on(app, data);
+	data->color = check_color_on(app, data->color);
 	data->x = 0;
 	data->y = 0;
 	return (data);

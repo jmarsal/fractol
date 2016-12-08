@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 16:06:47 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 16:15:53 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 # define BLACK 0x000000
 # define BLUE 0x1d4a64
 # define BLUE_MENU 0x05199d
+# define YELLOW 0xEAF74D
 # define PINK 0xff00c1
 # define RED 0xff0000
 # define ORANGE 0xFF5733

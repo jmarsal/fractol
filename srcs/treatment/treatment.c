@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 09:55:27 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/08 16:10:42 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,30 @@ void		mlx_put_pixel_to_image(t_app *app, int x, int y, int color)
 										octet * y)], &color, octet);
 }
 
+static int	find_color_in_struct(t_app *app)
+{
+	int	color;
+
+	color = 0;
+	if (app->theme->t1_on == 1)
+		return (color = app->theme->t1);
+	else if (app->theme->t2_on == 1)
+		return (color = app->theme->t2);
+	else if (app->theme->t3_on == 1)
+		return (color = app->theme->t3);
+	else if (app->theme->t4_on == 1)
+		return (color = app->theme->t4);
+	else
+		return (color = app->theme->t5);
+}
+
 void		put_pixel_and_choose_color(t_app *app)
 {
+	int	color;
+
+	color = find_color_in_struct(app);
 	if (app->data->i == app->data->iter)
-		mlx_put_pixel_to_image(app, app->data->x, app->data->y, COLOR_START);
+		mlx_put_pixel_to_image(app, app->data->x, app->data->y, color);
 	else
 		mlx_put_pixel_to_image(app, app->data->x, app->data->y,
 			app->data->color * app->data->i / app->data->iter);
@@ -60,7 +80,6 @@ int	refresh_win(t_app *app)
 	/* put menu to win */
 	put_img_menu_l_to_win(app, app->menu_l);
 	put_img_menu_b_to_win(app, app->menu_b);
-
 	/* Win top */
 	mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, app->fractal);
 	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
@@ -87,7 +106,6 @@ int	start_treatment(t_app *app, int map, char *mapname)
 	/* Init de l'app en fonction de la map */
 	if (!(app = init_app(map, &h, &w, mapname)))
 		return (-1);
-
 	/* Replissage de la data en fonction de la fractale */
 	if (app->mapname == 1 || app->mapname == 3 ||
 		app->mapname == 4 || app->mapname == 5)
