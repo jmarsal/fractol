@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 14:38:37 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:50:43 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,12 @@ int			mouse_motion_menu(int x, int y, t_app *app);
 void		move_tray(int keycode, t_app *app);
 void		motion_button_activate(int x, int y, t_app *app);
 void		motion_button_activate2(int x, int y, t_app *app);
-void		motion_button_activate3(int x, int y, t_app *app);
 void		motion_button_desactivate(t_app *app);
 void		if_slider_iter_on(int x, int y, t_app *app);
 void		if_slider_iter_off(int x, int y, t_app *app);
 void		if_plus_iter(int x, int y, t_app *app);
 void		if_minus_iter(int x, int y, t_app *app);
+void		if_clic_button(int x, int y, t_app *app);
+void		put_newpos_of_slider_theme(t_app *app);
 
 #endif

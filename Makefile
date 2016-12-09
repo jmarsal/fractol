@@ -57,6 +57,8 @@ SOURCES = main.c \
 					mouse_func.c \
 					button_motion.c \
 					slider_iter.c \
+					if_click.c \
+					change_img_sliders.c\
 
 # Libft
  LIBFT_PATH = libft

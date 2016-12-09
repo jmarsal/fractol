@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 16:10:42 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:01:34 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int	refresh_win(t_app *app)
 	mlx_string_put(MLX_PTR, MLX_WIN, 930, 50, 0x7E7E93, app->fractal);
 	mlx_string_put(MLX_PTR, MLX_WIN, 1760, 338, ORANGE,
 		ft_itoa_base((long)app->data->iter, 10));
-
 	/* Replissage de l'image en fonction de la fractale */
 	mlx_put_image_to_window(MLX_PTR, MLX_WIN,
 		app->img->img_ptr, SIZE_MENU_W, SIZE_MENU_H);

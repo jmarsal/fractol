@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 00:31:25 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 12:47:52 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:54:02 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ static void get_data_result(t_app *app)
 static void	get_data(t_app *app)
 {
 	while (app->data->y < HEIGHT_DRAW)
-		{
-			app->data->z_r = app->data->x / app->data->zoom + app->data->x1;
-			app->data->z_i = app->data->y / app->data->zoom + app->data->y1;
-			app->data->i = 0;
-			get_data_result(app);
-			app->data->y++;
-		}
+	{
+		app->data->z_r = app->data->x / app->data->zoom + app->data->x1;
+		app->data->z_i = app->data->y / app->data->zoom + app->data->y1;
+		app->data->i = 0;
+		get_data_result(app);
+		app->data->y++;
+	}
 }
 
 void		draw_julia(t_app *app)

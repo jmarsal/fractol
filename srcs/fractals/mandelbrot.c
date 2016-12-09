@@ -6,27 +6,11 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 23:23:10 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:53:45 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int		check_color_on(t_app *app, int color)
-{
-	
-	if (app->theme->t1_on == 1)
-		color = app->theme->t1;
-	else if (app->theme->t2_on == 1)
-		color = app->theme->t2;
-	else if (app->theme->t3_on == 1)
-		color = app->theme->t3;
-	else if (app->theme->t4_on == 1)
-		color = app->theme->t4;
-	else
-		color = app->theme->t5;
-	return (color);
-}
 
 t_data	*init_coords_mandelbrot(t_app *app)
 {
@@ -79,15 +63,15 @@ static void get_data_result(t_app *app)
 static void	get_data(t_app *app)
 {
 	while (app->data->y < HEIGHT_DRAW)
-		{
-			app->data->c_r = app->data->x / app->data->zoom + app->data->x1;
-			app->data->c_i = app->data->y / app->data->zoom + app->data->y1;
-			app->data->z_r = 0;
-			app->data->z_i = 0;
-			app->data->i = 0;
-			get_data_result(app);
-			app->data->y++;
-		}
+	{
+		app->data->c_r = app->data->x / app->data->zoom + app->data->x1;
+		app->data->c_i = app->data->y / app->data->zoom + app->data->y1;
+		app->data->z_r = 0;
+		app->data->z_i = 0;
+		app->data->i = 0;
+		get_data_result(app);
+		app->data->y++;
+	}
 }
 
 void		draw_mandelbrot(t_app *app)

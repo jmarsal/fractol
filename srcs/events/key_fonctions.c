@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:10:18 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 17:58:35 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:27:09 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	origin(int keycode, t_app *app)
 
 static double	progressive_i(t_app *app)
 {
-	static double	i = 0.2;
-
+	static double	i;
+	
+	i = 0.2;
 	if (app->data->zoom <= 100)
 		i = 0.2;
 	if (app->data->zoom > 100 && app->data->zoom <= 1000)

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 17:51:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 23:23:52 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:06:51 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_menu_b	*fill_menu_bottom(t_app *app, t_menu_b *tmp, int *h, int *w)
 		"srcs/img/slider_off.xpm", w, h);
 	tmp->slider_t5->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/slider_off.xpm", w, h);
+	tmp->phenix->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
+		"srcs/img/phenix.xpm", w, h);
 	tmp->plus->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 		"srcs/img/plus.xpm", w, h);
 	tmp->minus->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
@@ -45,6 +47,7 @@ t_menu_b	*init_bottom_menu(t_app *app, int *h, int *w)
 	tmp->slider_t3 = init_img(app, 64, 64);
 	tmp->slider_t4 = init_img(app, 64, 64);
 	tmp->slider_t5 = init_img(app, 64, 64);
+	tmp->phenix = init_img(app, 64, 64);
 	tmp->plus = init_img(app, 64, 64);
 	tmp->minus = init_img(app, 64, 64);
 	tmp = fill_menu_bottom(app, tmp, h, w);

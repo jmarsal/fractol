@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 16:13:21 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:25:25 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static void		mouse_motion_fract(int x, int y, t_app *app)
 int				mouse_motion_menu(int x, int y, t_app *app)
 {
 	mouse_motion_fract(x, y, app);
-	//bouton mandelbrot
 	if (x >= 30 && x <= 295 && y >= 115 && y <= 932)
 	{
 		motion_button_activate(x, y, app);
@@ -61,8 +60,8 @@ int				key_funct(int keycode, t_app *app)
 {
 	if (keycode == ESC)
 		exit(EXIT_SUCCESS);
-	if (keycode == LEFT || keycode == RIGHT || keycode == UP\
-			|| keycode == DOWN)
+	if (keycode == LEFT || keycode == RIGHT || keycode == UP ||
+		keycode == DOWN)
 		move_tray(keycode, app);
 	if (keycode == ORIGIN)
 		origin(keycode, app);

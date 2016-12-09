@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:19:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 23:21:49 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:04:28 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct	s_menu_b
 	t_img		*slider_t3;
 	t_img		*slider_t4;
 	t_img		*slider_t5;
+	t_img		*phenix;
 	t_img		*plus;
 	t_img		*minus;
 }				t_menu_b;

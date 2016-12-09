@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 14:07:01 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 13:15:34 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 09:23:57 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		motion_button_activate2(int x, int y, t_app *app)
 
 void		motion_button_activate(int x, int y, t_app *app)
 {
-	if (x >= 30 && x <= 295 && y >= 115 && y <= 190) //bouton mandelbrot
+	if (x >= 30 && x <= 295 && y >= 115 && y <= 190)
 	{
 		init_bool(&app->bool_button);
 		app->bool_button.mandel = 1;
