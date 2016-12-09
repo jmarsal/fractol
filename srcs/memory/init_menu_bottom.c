@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 17:51:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:06:51 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:50:56 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_menu_b	*init_bottom_menu(t_app *app, int *h, int *w)
 	t_menu_b	*tmp;
 
 	if (!(tmp = ft_memalloc(sizeof(t_menu_b))))
-		exit (-1);
+		exit(EXIT_FAILURE);
 	tmp->slider_motion = init_img(app, 64, 64);
 	tmp->slider_t1 = init_img(app, 64, 64);
 	tmp->slider_t2 = init_img(app, 64, 64);

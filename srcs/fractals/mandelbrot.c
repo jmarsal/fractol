@@ -6,13 +6,13 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 18:23:28 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:53:45 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:49:22 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_data	*init_coords_mandelbrot(t_app *app)
+t_data		*init_coords_mandelbrot(t_app *app)
 {
 	t_data *data;
 
@@ -31,7 +31,7 @@ t_data	*init_coords_mandelbrot(t_app *app)
 	return (data);
 }
 
-static void get_data_result(t_app *app)
+static void	get_data_result(t_app *app)
 {
 	while ((app->data->z_r * app->data->z_r + app->data->z_i * app->data->z_i)
 		< 4 && app->data->i < app->data->iter)

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 15:54:07 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:50:43 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:46:06 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include "define.h"
 # include "structs.h"
 # include "libft.h"
-
-#include <stdio.h>
 
 int			start_treatment(t_app	*app, int map, char *mapname);
 void		put_img_menu_l_to_win(t_app *app, t_menu_l *tmp);

@@ -12,7 +12,7 @@
 
 NAME = fractol
 CC = gcc
-OPTI = -O2
+OPTI = -Ofast
 CFLAGS_DEBUG = -g0 -O0
 CFLAGS = -Wall -Werror -Wextra $(OPTI)
 
@@ -46,10 +46,12 @@ SOURCES = main.c \
 					treatment.c \
 					put_img_and_str_win.c \
 					put_img_bottom_to_win.c \
+					put_pix_to_img.c \
 					init_app.c \
 					init_menu_left.c \
 					init_menu_bottom.c \
 					init_data.c \
+					init_divers.c \
 					mandelbrot.c \
 					julia.c \
 					events.c \

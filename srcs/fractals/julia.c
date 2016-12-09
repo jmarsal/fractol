@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 00:31:25 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:54:02 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:48:50 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_data		*init_julia(t_app *app)
 	return (data);
 }
 
-static void get_data_result(t_app *app)
+static void	get_data_result(t_app *app)
 {
 	while ((app->data->z_r * app->data->z_r + app->data->z_i * app->data->z_i)
 		< 4 && app->data->i < app->data->iter)

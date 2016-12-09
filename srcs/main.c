@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 13:52:44 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 22:57:06 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:53:09 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	search_errors(char *av)
 	return (test);
 }
 
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_app	*app;
 	int		map;

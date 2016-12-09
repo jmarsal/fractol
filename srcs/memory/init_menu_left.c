@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 22:28:08 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/07 17:05:42 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:50:32 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_menu_l		*init_left_menu(t_app *app, int *h, int *w)
 	t_menu_l	*tmp;
 
 	if (!(tmp = ft_memalloc(sizeof(t_menu_l))))
-		exit (-1);
+		exit(EXIT_FAILURE);
 	tmp->menu_ico = init_img(app, 64, 64);
 	tmp->menu_fract = init_img(app, 320, 320);
 	tmp->menu_fract2 = init_img(app, 320, 320);

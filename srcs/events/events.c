@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 09:01:13 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:25:25 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:47:54 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void		mouse_motion_fract(int x, int y, t_app *app)
 {
 	static int	tmp_x;
 	static int	tmp_y;
-	
-	if (app->data->motion == 1)//motion
+
+	if (app->data->motion == 1)
 	{
 		if (x > 350 && x < WIDTH_DRAW + 350 && y > 100 && y < HEIGHT_DRAW + 100)
 		{
@@ -40,8 +40,6 @@ static void		mouse_motion_fract(int x, int y, t_app *app)
 	}
 }
 
-
-
 int				mouse_motion_menu(int x, int y, t_app *app)
 {
 	mouse_motion_fract(x, y, app);
@@ -59,7 +57,10 @@ int				mouse_motion_menu(int x, int y, t_app *app)
 int				key_funct(int keycode, t_app *app)
 {
 	if (keycode == ESC)
+	{
+		app_destroy(app);
 		exit(EXIT_SUCCESS);
+	}
 	if (keycode == LEFT || keycode == RIGHT || keycode == UP ||
 		keycode == DOWN)
 		move_tray(keycode, app);

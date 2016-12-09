@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 09:42:23 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:44:51 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:44:59 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ static void	if_clic_button5(int x, int y, t_app *app)
 
 	w = WIDTH;
 	h = HEIGHT;
-	if (x >= 30 && x <= 295 && y >= 857 && y <= 932)
-		close_win(app);
-	else if (x >= 40 && x <= 100 && y >= 40 && y <= 90)
+	if (x >= 40 && x <= 100 && y >= 40 && y <= 90)
 	{
 		if (app->burger == 0)
 			app->burger = 1;
@@ -53,7 +51,8 @@ static void	if_clic_button4(int x, int y, t_app *app)
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
 	}
-	if_clic_button5(x, y, app);
+	else if (x >= 30 && x <= 295 && y >= 857 && y <= 932)
+		close_win(app);
 }
 
 static void	if_clic_button3(int x, int y, t_app *app)
@@ -115,7 +114,8 @@ void		if_clic_button(int x, int y, t_app *app)
 
 	w = WIDTH;
 	h = HEIGHT;
-	if (x >= 30 && x <= 295 && y >= 115 && y <= 190)
+	if_clic_button5(x, y, app);
+	if (app->burger == 1 && x >= 30 && x <= 295 && y >= 115 && y <= 190)
 	{
 		app->mapname = 1;
 		app->fractal = "MANDELBROT";
@@ -123,7 +123,7 @@ void		if_clic_button(int x, int y, t_app *app)
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
 	}
-	else if (x >= 30 && x <= 295 && y >= 205 && y <= 280)
+	else if (app->burger == 1 && x >= 30 && x <= 295 && y >= 205 && y <= 280)
 	{
 		app->mapname = 2;
 		app->fractal = "JULIA";
@@ -131,5 +131,6 @@ void		if_clic_button(int x, int y, t_app *app)
 		app->menu_b->slider_motion->img_ptr = mlx_xpm_file_to_image(MLX_PTR,
 			"srcs/img/slider_off.xpm", &w, &h);
 	}
-	if_clic_button2(x, y, app);
+	if (app->burger == 1)
+		if_clic_button2(x, y, app);
 }

@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 17:57:56 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/09 09:20:58 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:29:14 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ static void	fill_text(t_app *app)
 	mlx_string_put(MLX_PTR, MLX_WIN, 1778, 657, RED, "RED");
 	mlx_string_put(MLX_PTR, MLX_WIN, 1765, 707, ORANGE, "ORANGE");
 	mlx_string_put(MLX_PTR, MLX_WIN, 1770, 757, BLUE, "BLUE");
-	mlx_string_put(MLX_PTR, MLX_WIN, 820, 930, RED, "PRESS O FOR RESET PARAMETERS");
+	mlx_string_put(MLX_PTR, MLX_WIN, 820, 930, RED, PARAMETERS);
 	if (app->burger == 0)
 	{
 		mlx_string_put(MLX_PTR, MLX_WIN, 55, 200, RED, "NOTICE :");
-		mlx_string_put(MLX_PTR, MLX_WIN, 35, 250, 0xAEECFE, "- Scroll up or down for Zoom");
-		mlx_string_put(MLX_PTR, MLX_WIN, 35, 280, 0xAEECFE, "- Keys Arrows for move");
+		mlx_string_put(MLX_PTR, MLX_WIN, 35, 250, 0xAEECFE, SCROLL);
+		mlx_string_put(MLX_PTR, MLX_WIN, 35, 280, 0xAEECFE, ARROWS);
 		mlx_string_put(MLX_PTR, MLX_WIN, 55, 310, 0xAEECFE, "on the tray");
 		mlx_string_put(MLX_PTR, MLX_WIN, 105, 700, 0xAEECFE, "fractol made by");
-		mlx_string_put(MLX_PTR, MLX_WIN, 105, 730, 0xAEECFE, "Jean-Baptiste Marsal");
+		mlx_string_put(MLX_PTR, MLX_WIN, 105, 730, 0xAEECFE, AUTEUR);
 		mlx_string_put(MLX_PTR, MLX_WIN, 35, 770, 0xFFFFFF,
 													"jmarsal@student.42.fr");
 		mlx_string_put(MLX_PTR, MLX_WIN, 35, 800, 0xFFFFFF,

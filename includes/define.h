@@ -6,7 +6,7 @@
 /*   By: jmarsal <jmarsal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 14:01:29 by jmarsal           #+#    #+#             */
-/*   Updated: 2016/12/08 23:25:23 by jmarsal          ###   ########.fr       */
+/*   Updated: 2016/12/09 11:29:18 by jmarsal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@
 # define SIZE_MENU_W 350
 # define SIZE_MENU_H 100
 # define MASK_CLOSE 1L << 17
+# define SCROLL "- Scroll up or down for Zoom"
+# define ARROWS "- Keys Arrows for move"
+# define AUTEUR "Jean-Baptiste Marsal"
+# define PARAMETERS "PRESS O FOR RESET PARAMETERS"
 
 /*
 ** KEYCODE
