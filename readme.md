@@ -3,6 +3,8 @@
 ## Contributeur
 [@jmarsal](https://github.com/jmarsal)
 
+## Note Finale
+**118 / 100**
 
 # Projet Fractol 42
 Ce projet consiste à créer un petit logiciel d’exploration fractale. Commencez donc
@@ -27,9 +29,6 @@ sur les dump, ou bien dans sa version native pour MacOS X.
 • Vous devrez gérer l’expose correctement.
 • La touche ESC permettra de quitter le programme.
 • L’utilisation des images de la minilibX est fortement conseillée.
-
-## Note Final
-**118 / 100**
 
 ## Manuel
 1. `make`
