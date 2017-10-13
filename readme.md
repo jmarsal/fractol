@@ -4,7 +4,7 @@
 [@jmarsal](https://github.com/jmarsal)
 
 ## Note Finale
-**118 / 100**
+`118 / 100`
 
 # Projet Fractol 42
 Ce projet consiste à créer un petit logiciel d’exploration fractale. Commencez donc
